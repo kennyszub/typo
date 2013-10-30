@@ -23,6 +23,13 @@ class Admin::ContentController < Admin::BaseController
     end
   end
 
+  def merge
+    @article = Article.find(params[:id])
+
+    # redirect after modifying view
+    redirect_to :action => 'edit', :id => @article.id
+  end
+
   def new
     new_or_edit
   end
@@ -240,4 +247,6 @@ class Admin::ContentController < Admin::BaseController
   def setup_resources
     @resources = Resource.by_created_at
   end
+
+
 end

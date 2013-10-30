@@ -13,6 +13,7 @@
     :asynchronus => false -%>
 </li>
 
+
 <% if @article and @article.id %>
 <li id="resources">
   <% if  @article.resources.count > 0 %>
@@ -27,4 +28,5 @@
     <%= link_to_remote "+ #{resource.filename}", :url => { :action => "resource_add", :id => @article.id, :resource_id => resource.id}, :update => 'resources' %><br />
   <% end %>
 </li>
+
 <% end %>

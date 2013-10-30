@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # for CK Editor
+  #for CK Editor
   match 'fm/filemanager(/:action(/:id))', :to => 'Fm::Filemanager', :format => false
   match 'ckeditor/command', :to => 'ckeditor#command', :format => false
   match 'ckeditor/upload', :to => 'ckeditor#upload', :format => false
@@ -110,6 +110,7 @@ Rails.application.routes.draw do
      resources sidebar textfilters themes trackbacks users settings tags redirects seo post_types }.each do |i|
     match "/admin/#{i}", :to => "admin/#{i}#index", :format => false
     match "/admin/#{i}(/:action(/:id))", :to => "admin/#{i}", :action => nil, :id => nil, :format => false
+    match "/admin/content/edit/merge/:id", :to => "admin/content#merge", :format => false
   end
 
   # default
