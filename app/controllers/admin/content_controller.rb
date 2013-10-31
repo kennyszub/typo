@@ -24,9 +24,27 @@ class Admin::ContentController < Admin::BaseController
   end
 
   def merge
-    @article = Article.find(params[:id])
+    mergedArticleID = params["articleID"]
+    @mergedArticle = Article.find(mergedArticleID)
 
-    # redirect after modifying view
+    # merge body
+    @article = Article.find(params[:id])
+    @article.body += @mergedArticle.body
+
+    # merge comments
+    @mergedArticle.comments.each do |comment|
+      @article.comments.push(comment)
+    end
+    @mergedArticle.comments(true)
+    @article.save
+
+    # destroy old article
+    @mergedArticle.destroy
+
+
+
+
+    # redirect after merging articles
     redirect_to :action => 'edit', :id => @article.id
   end
 
