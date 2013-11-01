@@ -42,7 +42,7 @@ class Admin::ContentController < Admin::BaseController
   #  @mergedArticle.destroy
 
   def merge
-    mergedArticleID = params["articleID"]
+    mergedArticleID = params["merge_with"]
     article = Article.find(params[:id])
     article.merge_with(mergedArticleID)
 

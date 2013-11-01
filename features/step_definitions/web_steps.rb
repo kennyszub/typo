@@ -41,12 +41,77 @@ Given /^the blog is set up$/ do
                 :profile_id => 1,
                 :name => 'admin',
                 :state => 'active'})
+  User.create!({:login => 'nonadmin',
+                :password => '123456',
+                :email => 'bob@bob.com',
+                :profile_id => 2,
+                :name => 'nonadmin',
+                :state => 'active'})
+  Article.create!({:id => 10,
+                  :type => "Article",
+                  :title => "Hello World!",
+                  :author => "Mr Typo",
+                  :body => "Welcome to the jungle.",
+                  :extended => nil,
+                  :excerpt => nil,
+                  :created_at => "2013-10-31 21:38:24",
+                  :updated_at => "2013-10-31 21:39:17",
+                  :user_id => 1,
+                  :permalink => "hello-world",
+                  :guid => "3e493835-4fce-46b4-b5c5-1483b1e5341d",
+                  :text_filter_id => 5,
+                  :whiteboard => nil,
+                  :name => nil,
+                  :published => true,
+                  :allow_pings => true,
+                  :allow_comments => true,
+                  :published_at => "2013-10-31 21:38:24",
+                  :state => "published",
+                  :parent_id => nil,
+                  :settings => {"password"=>nil},
+                  :post_type => "read"})
+  Article.create!({:id => 11,
+                   :type => "Article",
+                   :title => "The fantastic adventures of Ken",
+                   :author => "Ken",
+                   :body => "Once upon a time Ken was the man",
+                   :extended => nil,
+                   :excerpt => nil,
+                   :created_at => "2013-10-10 21:38:24",
+                   :updated_at => "2013-10-11 21:39:17",
+                   :user_id => 2,
+                   :permalink => "fantastic-adventures",
+                   :guid => "e9e57c5f-5b66-4053-8dd1-5371cf6852e2",
+                   :text_filter_id => 5,
+                   :whiteboard => nil,
+                   :name => nil,
+                   :published => true,
+                   :allow_pings => true,
+                   :allow_comments => true,
+                   :published_at => "2013-10-12 21:38:24",
+                   :state => "published",
+                   :parent_id => nil,
+                   :settings => {"password"=>nil},
+                   :post_type => "read"})
 end
 
 And /^I am logged into the admin panel$/ do
   visit '/accounts/login'
   fill_in 'user_login', :with => 'admin'
   fill_in 'user_password', :with => 'aaaaaaaa'
+  click_button 'Login'
+  if page.respond_to? :should
+    page.should have_content('Login successful')
+  else
+    assert page.has_content?('Login successful')
+  end
+  puts "#{Article.all}"
+end
+
+And /^I am logged in as a non-admin$/ do
+  visit '/accounts/login'
+  fill_in 'user_login', :with => 'nonadmin'
+  fill_in 'user_password', :with => '123456'
   click_button 'Login'
   if page.respond_to? :should
     page.should have_content('Login successful')

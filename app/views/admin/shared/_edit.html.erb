@@ -10,7 +10,7 @@
 <% if @article and @article.id %>
     <h4>Merge Articles</h4>
     <form name="merge_with" action="<%='/admin/content/edit/merge/' + @article.id.to_s-%>" method="put">
-      Article ID <input type="text" name="articleID"><br>
+      Article ID <input type="text" name="merge_with"><br>
       <input type="submit" value="Merge">
     </form>
     <%= @test  %>
