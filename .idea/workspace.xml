@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3394d80d-83cf-4d14-8ba4-326960d93d43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/db_development" afterPath="$PROJECT_DIR$/db/db_development" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/db_test" afterPath="$PROJECT_DIR$/db/db_test" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/shared/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/shared/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/content_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/content_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/web_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/web_steps.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="typo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +62,7 @@
           <file leaf-file-name="_edit.html.erb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/admin/shared/_edit.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="41" selection-start="256" selection-end="256" vertical-scroll-proportion="0.48214287">
+                <state line="11" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.58928573">
                   <folding />
                 </state>
               </provider>
@@ -1032,7 +1027,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/shared/_edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="41" selection-start="256" selection-end="256" vertical-scroll-proportion="0.48214287">
+        <state line="11" column="9" selection-start="296" selection-end="296" vertical-scroll-proportion="0.58928573">
           <folding />
         </state>
       </provider>

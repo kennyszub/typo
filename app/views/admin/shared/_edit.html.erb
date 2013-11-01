@@ -9,7 +9,7 @@
 
 <% if @article and @article.id and @admin%>
     <h4>Merge Articles</h4>
-    <form name="merge_with" action="<%='/admin/content/edit/merge/' + @article.id.to_s-%>">
+    <form action="<%='/admin/content/edit/merge/' + @article.id.to_s-%>">
       Article ID <input type="text" name="merge_with"><br>
       <input type="submit" value="Merge">
     </form>
