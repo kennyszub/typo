@@ -105,7 +105,6 @@ And /^I am logged into the admin panel$/ do
   else
     assert page.has_content?('Login successful')
   end
-  puts "#{Article.all}"
 end
 
 And /^I am logged in as a non-admin$/ do
